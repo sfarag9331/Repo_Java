@@ -55,6 +55,14 @@ public class Homework3 {
         double cTemper = kTeper - 273.15;
         System.out.println(kTeper + "°K --> " + cTemper + "°C");
 
+        String hello = "Hello World";
+        char lastChar = hello.charAt(10);
+        System.out.println("Last char in Hello World is" + " " + lastChar);
+
+
+
+
+
 
     }
 }
