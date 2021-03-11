@@ -12,11 +12,10 @@ public class Homework4 {
              * Hint: use ternary operator
              */
             String sentence_3 = "hello dear, how are you?";
-            boolean result;
             int sentence_3Length = sentence_3.length();
             int length = 10;
-            String trueOrFalse = sentence_3Length > length ? "True" : "False";
-            System.out.println("1. Is the string's length greater than 10?" + " " + trueOrFalse);
+            boolean result = sentence_3Length > length ? true : false;
+            System.out.println("1. Is the string's length greater than 10?" + " " + result);
 
 
             /**
