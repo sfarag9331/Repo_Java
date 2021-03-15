@@ -1,5 +1,6 @@
 package Class1;
 import java.util.Arrays;
+import java.util.Locale;
 
 public class Homework5 {
     public static void main(String[] args) {
@@ -16,7 +17,7 @@ public class Homework5 {
          * 4. Print the number of letters in the first name.
          */
 
-        String fullName = "MY pRaCtice";
+        String fullName = "KMY pRaCtice";
         String result = "";
         String charStartsWith = "K";
         String fullNameUpperCase = fullName.toUpperCase();
@@ -126,6 +127,82 @@ public class Homework5 {
         String[] afterSplitBy_spaces = sentence_4.split(" ");
         int numOfWords = afterSplitBy_spaces.length;
         System.out.println(numOfWords);
+
+
+        /**
+         * based on month name, print season
+         * dec, jan, feb --> winter season
+         * mar, apr, may --> summer season
+         * jun, jul, aug --> fall season
+         * sep, oct, nov --> spring season
+         * if invalid month name, print "Invalid month name - ABC"
+         */
+        String monthName = "May";  //
+        String lowerCaseMonthName = monthName.toLowerCase();
+
+        switch (lowerCaseMonthName) {
+            case ("dec"):
+                System.out.println("winter season");
+                break;
+            case ("jan"):
+                System.out.println("winter season");
+                break;
+            case ("feb"):
+                System.out.println("winter season");
+                break;
+            case ("mar"):
+                System.out.println("summer season");
+                break;
+            case ("apr"):
+                System.out.println("summer season");
+                break;
+            case ("may"):
+                System.out.println("summer season");
+                break;
+            case ("jun"):
+                System.out.println("fall season");
+                break;
+            case ("jul"):
+                System.out.println("fall season");
+                break;
+            case ("aug"):
+                System.out.println("fall season");
+                break;
+            case ("sep"):
+                System.out.println("spring season");
+                break;
+            case ("oct"):
+                System.out.println("spring season");
+                break;
+            case ("nov"):
+                System.out.println("spring season");
+                break;
+            default:
+                System.out.println("Invalid month name - " + monthName);
+                /**
+                 * Print the position of searched named.
+                 * * if name not found, print "XXXX is not present in the array"
+                 *
+                 */
+                String[] names = {"john", "happy", "peACe", "jOy", "LEarN"};
+                char position;
+                String nameToSearch = "bla";
+
+                if (names[0].equalsIgnoreCase(nameToSearch)) {
+                    position = '1';
+                } else if (names[1].equalsIgnoreCase(nameToSearch)) {
+                    position = '2';
+                } else if (names[2].equalsIgnoreCase(nameToSearch)) {
+                    position = '3';
+                } else if (names[3].equalsIgnoreCase(nameToSearch)) {
+                    position = '4';
+                } else if (names[4].equalsIgnoreCase(nameToSearch)) {
+                    position = '5';
+                } else System.out.println("Not Found");
+
+            }
+
+        }
     }
-}
+
 
