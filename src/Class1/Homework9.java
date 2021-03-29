@@ -19,7 +19,7 @@ public class Homework9 {
      * Write a method to convert given string into Titlecase
      */
     public static String Titlecase (String myString) {
-        String[] myStringArray = myString.split(" ");
+        String[] myStringArray = myString.trim().split(" ");
         myString = "";
         for (int i = 0; i < myStringArray.length; i++) {
             myString = myString + myStringArray[i].substring(0, 1).toUpperCase() + myStringArray[i].substring(1).toLowerCase() + " ";
