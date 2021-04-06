@@ -2,8 +2,8 @@ package HW11;
 
 public class Printer {
 
-    static int tonerLevel = 100;
-    static int paperInTray = 100;
+    static int currentTonerLevel = 100;
+    static int currentPaperInTray = 100;
     boolean isDoubleSided = true;
     int paperAmount;
     int tonerAmount;
@@ -45,11 +45,10 @@ public class Printer {
         int maxPaper = 100;
         if (pages <= 0) {
             System.out.println("Invalid number pages");
-        } else if (pages >= 1 && paperInTray <= maxPaper && paperInTray >= pages && tonerLevel <= maxPaper && tonerLevel >= pages) {
-            paperInTray = paperInTray - pages;
-            tonerLevel = tonerLevel - pages;
-            System.out.println("Toner level: " + paperInTray + "\nPaper in tray: " + paperInTray);
-        } else if (pages >= 1 && paperInTray > maxPaper || paperInTray < pages || tonerLevel > maxPaper || tonerLevel < pages) {
+        } else if (pages >= 1 && currentPaperInTray <= maxPaper && currentPaperInTray >= pages && currentTonerLevel <= maxPaper && currentTonerLevel >= pages) {
+            currentPaperInTray = currentPaperInTray - pages;
+            currentTonerLevel = currentTonerLevel - pages;
+        } else if (pages >= 1 && currentPaperInTray > maxPaper || currentPaperInTray < pages || currentTonerLevel > maxPaper || currentTonerLevel < pages) {
             System.out.println("Not enough paper or toner");
 
         }
@@ -57,12 +56,11 @@ public class Printer {
 
     public void print(int pages, boolean isDoubleSided) {
         int maxToner = 100;
-        int maxPaper = 100;
-        if (pages >= 1 && paperInTray <= maxPaper && paperInTray >= pages && tonerLevel <= maxPaper && tonerLevel >= pages) {
-            paperInTray = paperInTray - pages / 2;
-            tonerLevel = tonerLevel - pages;
-            System.out.println("Toner level: " + paperInTray + "\nPaper in tray: " + paperInTray);
-        } else if (pages >= 1 && paperInTray > maxPaper || paperInTray < pages || tonerLevel > maxPaper || tonerLevel < pages) {
+        int maxPaper = 200;
+        if (pages >= 1 && currentPaperInTray <= maxPaper && currentPaperInTray >= pages && currentTonerLevel <= maxPaper && currentTonerLevel >= pages) {
+            currentPaperInTray = currentPaperInTray - (pages / 2);
+            currentTonerLevel = currentTonerLevel - pages;
+        } else if (pages >= 1 && currentPaperInTray > maxPaper || currentPaperInTray < pages || currentTonerLevel > maxPaper || currentTonerLevel < pages) {
             System.out.println("Not enough paper or toner");
 
         }
@@ -70,35 +68,35 @@ public class Printer {
 
     public static int addPaper(int paperAmount) {
         if (paperAmount > 0) {
-            paperInTray = paperInTray + paperAmount;
-            if (paperInTray > 100){
-                paperInTray = paperInTray - paperAmount;
+            currentPaperInTray = currentPaperInTray + paperAmount;
+            if (currentPaperInTray > 100){
+                currentPaperInTray = currentPaperInTray - paperAmount;
                 System.out.println("Invalid paper amount added");
-            } else if (paperInTray <= 100){
-                paperInTray = paperInTray + paperAmount;
+            } else if (currentPaperInTray <= 100){
+                currentPaperInTray = currentPaperInTray;
             }
         } else {
             System.out.println("Invalid paper amount added");
-        } return paperInTray;
+        } return currentPaperInTray;
     }
 
     public static int addToner(int tonerAmount) {
         if (tonerAmount > 0) {
-            tonerLevel = tonerLevel + tonerAmount;
-            if (tonerLevel > 100){
-                tonerLevel = tonerLevel - tonerAmount;
+            currentTonerLevel = currentTonerLevel + tonerAmount;
+            if (currentTonerLevel > 100){
+                currentTonerLevel = currentTonerLevel - tonerAmount;
                 System.out.println("Invalid toner amount added");
-            } else if (tonerLevel <= 100){
-                tonerLevel = tonerLevel + tonerAmount;
+            } else if (currentTonerLevel <= 100){
+                currentTonerLevel = currentTonerLevel;
             }
         } else {
             System.out.println("Invalid toner amount added");
-        } return tonerLevel;
+        } return currentTonerLevel;
     }
 
 
     public void printerSummary (){
-        System.out.println("Toner level: " + paperInTray + "\nPaper in tray: " + paperInTray);
+        System.out.println("Toner level: " + currentTonerLevel + "\nPaper in tray: " + currentPaperInTray);
 
     }
 
