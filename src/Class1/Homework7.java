@@ -13,18 +13,15 @@ public class Homework7 {
         String sentence1 = "i'm 59 yEars OlD";
         String sentence1LC = sentence1.toLowerCase();
         String[] words = sentence1LC.split(" ");
-        String firstLetter = "";
-        String remainingLetters;
+        sentence1 = "";
+
 
 
         for (int i = 0; i <= words.length - 1; i++) {
-            firstLetter = words[i].substring(0, 1);
-            remainingLetters = words[i].substring(1, words[i].length());
-            firstLetter = firstLetter.toUpperCase();
-            String wordI = firstLetter + remainingLetters;
-            System.out.print(wordI + " ");
+            sentence1 = words[i].substring(0, 1).toUpperCase() + words[i].substring(1, words[i].length()).toLowerCase() + " ";
         }
-        System.out.println("");
+        sentence1 = sentence1.trim();
+        System.out.println(sentence1);
 
 
         /**
@@ -38,6 +35,7 @@ public class Homework7 {
         String sentence = "Best place iN THE whole World";
         String sentenceUpperCase = sentence.toUpperCase();
         String[] sentenceArray = sentenceUpperCase.split(" ");
+        sentence = "";
         char sentenceAbbreviation;
 
         for (int i = 0; i <= sentenceArray.length - 1; i++) {
@@ -57,14 +55,14 @@ public class Homework7 {
          System.out.println("Reverse sentence3 : " + reverseSentence3);  // syadiloh yppah
          */
         String sentence3 = "happy holidays";
-        String reverseSentence3 = "";
         System.out.println("sentence3 : " + sentence3);     // happy holidays
         String[] sentence3AfterSplit = sentence3.split("");
+        String reverseSentence3 = "";
 
         for (int i = sentence3AfterSplit.length - 1; i >= 0; i--) {
-            reverseSentence3 = sentence3AfterSplit[i];
-            System.out.print(reverseSentence3);
+            reverseSentence3 = sentence3 + sentence3AfterSplit[i];
         }
+        System.out.println("Reverse sentence3 : " + reverseSentence3);
     }
 
 }

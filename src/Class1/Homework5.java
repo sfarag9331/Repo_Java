@@ -72,7 +72,7 @@ public class Homework5 {
          * // code
          * sout(threeWordsSentence_1);  // Happy New Year
          */
-        String threeWordsSentence_1 =  "hApPY nEW yeAr";
+        String threeWordsSentence_1 =  "saLly farAG Bala";
         System.out.println(threeWordsSentence_1);
         threeWordsSentence_1 = threeWordsSentence_1.toLowerCase();
         String[] afterSplitBy_space = threeWordsSentence_1.split(" ");
