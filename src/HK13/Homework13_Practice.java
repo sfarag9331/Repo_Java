@@ -7,9 +7,13 @@ public class Homework13_Practice {
                 "green",  "red", "yellow", "yellow", "grey", "blue" , "yellow", "grey",
                 "green", "blue",  "yellow", "grey", "green", "blue", "green", "green",
                 "green", "green"};
+
     Homework_13 a1 = new Homework_13();
+
     a1.findDuplicates(words);
+
     a1.returnDuplicateValues(words);
+
     a1.maximumRepteadedValues(arr);
     }
 }

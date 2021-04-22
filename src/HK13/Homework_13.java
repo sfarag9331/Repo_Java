@@ -61,6 +61,7 @@ public class Homework_13 {
      * If there is a color with maximum count, return the color name
      * If there are two or more colors with same number, return all.
      */
+    //Ignor - could'nt figure this one out
     public void maximumRepteadedValues (String [] StringArray) {
         List<String> wordsList = Arrays.asList(StringArray);
         Set<String> unique = new HashSet<>(wordsList);
